@@ -37,19 +37,15 @@ public class VeiculoController {
 					@ApiResponse(code = 400, message = "Erro de validação de negócio"),
 					@ApiResponse(code = 500, message = "Erro inesperado") })
 	@RequestMapping(value = "", produces = { "application/json" }, method = RequestMethod.POST)
-	public ResponseEntity<?> inserir(@RequestBody VeiculoDTO veiculoDTO){
+	public ResponseEntity<?> inserir(@RequestBody VeiculoDTO veiculoDTO) throws URISyntaxException{
 				
-		try {
+		
 			veiculoService.inserir(veiculoDTO);
 			URI location;
 			location = new URI("/veiculos/" + veiculoDTO.getCodVeiculo());
 			veiculoService.inserir(veiculoDTO);
 			return ResponseEntity.created(location).body(veiculoDTO);
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			//e.printStackTrace();
-			return ResponseEntity.badRequest().body(e.getMessage());
-		}	
+			
 		
 	}
 	

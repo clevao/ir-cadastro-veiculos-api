@@ -2,6 +2,8 @@ package br.com.cadastro.veiculos.apis.handler;
 
 import java.time.LocalDateTime;
 
+import org.springframework.http.HttpStatus;
+
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
@@ -42,6 +44,12 @@ public class ApiError {
         this.status = status;
         this.message = message;
     }
+    
+    public ApiError(HttpStatus status, String message) {
+		this();
+		this.status = new Integer(status.toString());
+		this.message = message;
+	}
 
     public ApiError(Integer status, String message, Throwable causa) {
         this();
@@ -52,7 +60,7 @@ public class ApiError {
         }
     }
 
-    public Integer getStatus() {
+	public Integer getStatus() {
         return status;
     }
 

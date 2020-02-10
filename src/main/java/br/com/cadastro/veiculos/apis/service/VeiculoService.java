@@ -9,9 +9,9 @@ import br.com.cadastro.veiculos.apis.model.MarcaResponse;
 
 public interface VeiculoService {
 	
-	public VeiculoDTO inserir(VeiculoDTO veiculoDTO) throws Exception;
+	public VeiculoDTO inserir(VeiculoDTO veiculoDTO);
 	
-	public VeiculoDTO editar(Integer ctlVeiculo, VeiculoDTO veiculoDTO) throws Exception;
+	public VeiculoDTO editar(Integer ctlVeiculo, VeiculoDTO veiculoDTO);
 	
 	public VeiculoDTO get(Integer ctlVeiculo);
 	
