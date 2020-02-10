@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jboss-deployment-structure xmlns="urn:jboss:deployment-structure:1.1">
+    <deployment>
+        <exclusions>
+            <!-- Exclude logging -->
+            <module name='org.slf4j'/>
+            <module name='org.slf4j.impl'/>
+
+            <!-- Exclude Jackson - I included my own -->
+            <module name="com.fasterxml.jackson.core.jackson-annotations" />
+            <module name="com.fasterxml.jackson.core.jackson-core" />
+            <module name="com.fasterxml.jackson.core.jackson-databind" />
+            <module name="com.fasterxml.jackson.jaxrs.jackson-jaxrs-json-provider" />
+            <module name="org.jboss.resteasy.resteasy-jackson-provider" />
+            <module name="org.jboss.resteasy.resteasy-jackson2-provider" />
+
+            <module name="org.apache.xalan" />
+            <module name="org.apache.xerces" />
+            <module name="org.jboss.logging" />
+
+            <!-- Exclude Hibernate -->
+            <module name="org.hibernate" />
+
+            <!-- Exclude hibernate validation -->
+            <module name="org.jboss.resteasy.resteasy-validator-provider-11" />
+            <module name="org.hibernate.validator" />
+            <module name="javax.validation.api" />
+            <module name="javaee.api" />
+            <module name="javax.faces.api" />
+        </exclusions>
+    </deployment>
+
+</jboss-deployment-structure>
