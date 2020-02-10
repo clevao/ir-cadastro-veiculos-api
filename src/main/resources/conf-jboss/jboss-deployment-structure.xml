@@ -13,7 +13,7 @@
             <module name="com.fasterxml.jackson.jaxrs.jackson-jaxrs-json-provider" />
             <module name="org.jboss.resteasy.resteasy-jackson-provider" />
             <module name="org.jboss.resteasy.resteasy-jackson2-provider" />
-
+            
             <module name="org.apache.xalan" />
             <module name="org.apache.xerces" />
             <module name="org.jboss.logging" />
@@ -27,6 +27,7 @@
             <module name="javax.validation.api" />
             <module name="javaee.api" />
             <module name="javax.faces.api" />
+                        
         </exclusions>
     </deployment>
 

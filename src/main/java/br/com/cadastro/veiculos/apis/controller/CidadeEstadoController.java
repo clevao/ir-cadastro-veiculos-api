@@ -23,7 +23,7 @@ import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
 
 @RestController
-@RequestMapping(value = "/cidade-estado")
+@RequestMapping(value = "/api/cidade-estado")
 public class CidadeEstadoController {
 
 	@Autowired

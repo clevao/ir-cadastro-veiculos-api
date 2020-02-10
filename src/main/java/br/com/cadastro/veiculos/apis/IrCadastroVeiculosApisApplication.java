@@ -11,14 +11,14 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @EnableSwagger2
 public class IrCadastroVeiculosApisApplication{ // extends SpringBootServletInitializer {
 
-	//private static Class<IrCadastroVeiculosApisApplication> applicationClass = IrCadastroVeiculosApisApplication.class;
+	// private static Class<IrCadastroVeiculosApisApplication> applicationClass = IrCadastroVeiculosApisApplication.class;
 
 	public static void main(String[] args) {
 		SpringApplication.run(IrCadastroVeiculosApisApplication.class, args);
 	}
-
-	/*@Override
+/*
+	@Override
 	protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
 		return application.sources(applicationClass);
-	}*/
+	} */
 }

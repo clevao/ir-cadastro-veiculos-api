@@ -26,7 +26,7 @@ import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
 
 @RestController
-@RequestMapping("/veiculos")
+@RequestMapping("/api/veiculos")
 public class VeiculoController {
 	
 	@Autowired
