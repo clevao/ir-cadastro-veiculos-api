@@ -13,9 +13,11 @@ import br.com.cadastro.veiculos.apis.service.MarcaService;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
+import springfox.documentation.annotations.ApiIgnore;
 
 @RestController
 @RequestMapping("/marca")
+@ApiIgnore
 public class MarcaController {
 	
 	@Autowired
