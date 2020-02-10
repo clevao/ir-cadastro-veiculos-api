@@ -14,6 +14,8 @@ import org.springframework.core.env.Environment;
 import org.springframework.jdbc.datasource.lookup.JndiDataSourceLookup;
 import org.springframework.stereotype.Component;
 
+import com.mysql.jdbc.jdbc2.optional.MysqlDataSource;
+
 import oracle.jdbc.pool.OracleDataSource;
 
 @Component 
@@ -35,7 +37,7 @@ public class Utils {
 
 	  */
 	
-	public DataSource dataSource() {
+	/*public DataSource dataSource() {
 		OracleDataSource oracleDS = null;
 		try {
 			oracleDS = new OracleDataSource();
@@ -43,6 +45,18 @@ public class Utils {
 			oracleDS.setUser(env.getProperty("spring.datasource.username"));
 			oracleDS.setPassword(env.getProperty("spring.datasource.password"));
 		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return oracleDS;
+	}*/
+	public DataSource dataSource() {
+		MysqlDataSource oracleDS = null;
+		try {
+			oracleDS = new MysqlDataSource();
+			oracleDS.setURL(env.getProperty("spring.datasource.url"));
+			oracleDS.setUser(env.getProperty("spring.datasource.username"));
+			oracleDS.setPassword(env.getProperty("spring.datasource.password"));
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		return oracleDS;

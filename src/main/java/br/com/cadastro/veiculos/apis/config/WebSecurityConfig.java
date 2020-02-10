@@ -70,6 +70,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 		 * );
 		 */
         
+    	/*
+    	 * =============== CONFIGURAÇÃO PAMCARY =================
         auth.jdbcAuthentication().dataSource(utils.dataSource()).passwordEncoder(passwordEncoder())
         .usersByUsernameQuery("SELECT u.usr_name as username, '{noop}'||u.cod_senha as password, "
         		+ "(CASE WHEN u.sta_senha IS NULL THEN 0 ELSE 1 end ) as enabled, u.sta_senha "
@@ -80,7 +82,15 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 + "INNER JOIN relac_perfil_usuario pu ON pu.ctl_user = u.ctl_user AND pu.cod_sisti='3' "
                 + "INNER JOIN funcoes_sistema f ON f.cod_funca = pu.cod_funca AND f.cod_sisti = pu.cod_sisti "
                 + "WHERE usr_name = ?");
-        
+        */
+    	
+    	/* ================== CONFIGURAÇÃO DELL =================  */
+    	auth.jdbcAuthentication().dataSource(utils.dataSource()).passwordEncoder(passwordEncoder())
+        .usersByUsernameQuery("SELECT username, CONCAT('{noop}',password) AS password, enabled FROM users WHERE username = ?")
+        .authoritiesByUsernameQuery(
+                "SELECT u.username, ur.role FROM users u " + 
+                "INNER JOIN user_roles ur ON ur.username = u.username " + 
+                "WHERE  u.username =  ?");
         
     }
 
